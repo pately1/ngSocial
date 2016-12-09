@@ -1,4 +1,4 @@
-# Computer_Solutions
+# ngSocial
 
 ## Table of Contents
 
