@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-md-4">
+        <h3>{{msg}}</h3>
+        <div ng-if="isLoggedIn">
+            <a href="{{userInfo.link}}" target="_blank"><img class="img-circle" ng-src="{{picture}}"></a>
+        </div>
+        <br>
+        <div ng-if="!isLoggedIn">
+            <button class="btn btn-default" ng-click="signIn()">Login</button>
+        </div>
+        <div ng-if="isLoggedIn">
+            <button class="btn btn-default" ng-click="signOut()">Logout</button>
+        </div>
+        <br><br>
+        <div class="well" ng-if="isLoggedIn">
+            <h4>User Info</h4>
+            <ul>
+                <li>User Id: {{userInfo.id}}</li>
+                <li>First Name: {{userInfo.first_name}}</li>
+                <li>Last Name: {{userInfo.last_name}}</li>
+                <li>Email: {{userInfo.email}}</li>
+                <li>Gender: {{userInfo.gender}}</li>
+                <li>Locale: {{userInfo.locale}}</li>
+            </ul>
+        </div>
+        <br>
+        <div class="well" ng-if="isLoggedIn">
+            <h4>Permission</h4>
+            <ul>
+                <li ng-repeat="permission in permissions">{{permission.permission}} - {{permission.status}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h3>Welcome to Facebook!</h3>
+        <div ng-if="isLoggedIn">
+        <form ng-submit="post()">
+            <div class="form-group">
+                <label>Status Update</label>
+                <textarea ng-model="body" cols="30" rows="2" class="form-control"></textarea>
+            </div>
+            <button class="btn btn-default">Post</button>
+        </form>
+        <div ng-repeat="post in posts" class="stbody">
+            <div class="stimg">
+                <img ng-src="{{picture}}" />
+            </div>
+            <div class="sttext">
+                {{post.message}}
+                <div class="sttime">{{post.updated_time}}</div>
+            </div>
+        </div>
+        </div>
+        <div ng-if="!isLoggedIn">
+            <p>Please Login to update status.</p>
+        </div>
+    </div>
+</div>
