@@ -1,0 +1,23 @@
+{
+  "name": "ngsocial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pately1/ngSocial.git"
+  },
+  "author": "Yash Patel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pately1/ngSocial/issues"
+  },
+  "homepage": "https://github.com/pately1/ngSocial#readme",
+  "dependencies": {
+    "angular": "^1.4.14",
+    "angular-route": "^1.6.0"
+  }
+}
